@@ -1,12 +1,9 @@
-set title  " Muestra el nombre del archivo en la ventana de la terminal
-set number  " Muestra los números de las líneas
-set mouse=a  " Permite la integración del mouse (seleccionar texto, mover el cursor)
-
-set nowrap  " No dividir la línea si es muy larga
-
-set cursorline  " Resalta la línea actual
-set colorcolumn=120  " Muestra la columna límite a 120 caracteres
-
+set title " Show open file name
+set number " Line numbers
+set mouse=a " Cursor support
+set nowrap
+set cursorline " Highlight current line
+set colorcolumn=120  " Column limit
 set relativenumber
 set showmatch
 set hlsearch
@@ -18,50 +15,50 @@ syntax enable
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
-" Indentación a 2 espacios
+" Indentation with 2 spaces
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set shiftround
-set expandtab  " Insertar espacios en lugar de <Tab>s
+set expandtab " Insert scpaces instead of <Tab>s
 
-set hidden  " Permitir cambiar de buffers sin tener que guardarlos
+set hidden " Allow swith between buffers without saving 
 
-set ignorecase  " Ignorar mayúsculas al hacer una búsqueda
-set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúsculas
+set ignorecase  " Ingore capital letters when searching
+set smartcase  " Don't ignore capital letters if the search word has
 
-set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y español
+set spelllang=en,es  " Eng and Esp corrections
 set encoding=utf8
 
-set termguicolors  " Activa true colors en la terminal
+set termguicolors  " Enables a greater color palette 
 
-let g:mapleader = ' '  " Definir espacio como la tecla líder
+let g:mapleader = ' '  " Space a leader key 
 
 nnoremap <leader>w :w<CR>  " Guardar con <líder> + s
 
 nnoremap <leader>e :e $MYVIMRC<CR>  " Abrir el archivo init.vim con <líder> + e
 
-" Usar <líder> + y para copiar al portapapeles
+" Usar <leader> + y to copy to the clipboard
 vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 
-" Usar <líder> + d para cortar al portapapeles
+" Usar <leader> + d to cut to the clipboard 
 vnoremap <leader>d "+d
 nnoremap <leader>d "+d
 
-" Usar <líder> + p para pegar desde el portapapeles
+" Usar <leader> + p to paste from the clipboard
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>P "+P
 
-" Moverse al buffer siguiente con <líder> + l
+" Move to the next buffer with <leader> + l
 nnoremap <leader>l :bnext<CR>
 
-" Moverse al buffer anterior con <líder> + j
+" Move to the previous buffer with <leader> + j
 nnoremap <leader>j :bprevious<CR>
 
-" Cerrar el buffer actual con <líder> + q
+" Close the current buffer <leader> + q
 nnoremap <leader>q :q<CR>
 
 nmap <Leader>s <Plug>(easymotion-s2)
@@ -96,6 +93,7 @@ let g:airline_powerline_fonts = 1
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Vundle plugins manager
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -104,22 +102,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-" Themes
-Plugin 'morhetz/gruvbox'
-Plugin 'joshdick/onedark.vim'
-Plugin 'ajmwagar/vim-deus'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'cocopon/iceberg.vim'
-Plugin 'ghifarit53/tokyonight-vim'
-
 Plugin 'airblade/vim-gitgutter'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
-"Plugin 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'neoclide/coc.nvim', {'branch': 'release'} " Add Javascript/TS intellisense support
 Plugin 'mhartington/oceanic-next'
 Plugin 'mxw/vim-jsx'
 Plugin 'maxmellon/vim-jsx-pretty'
@@ -130,19 +118,23 @@ Plugin 'prettier/vim-prettier'
 Plugin 'yggdroot/indentline'
 Plugin 'eiiches/vim-rainbowbrackets'
 
-" TEST
+" Currently testing
 Plugin 'kien/ctrlp.vim'
 Plugin 'gilsondev/searchtasks.vim'
 
-
-" Plugin 'nvim-lua/popup.nvim'
-" Plugin 'nvim-lua/plenary.nvim'
-" Plugin 'nvim-telescope/telescope.nvim'
+" Themes
+Plugin 'morhetz/gruvbox'
+Plugin 'joshdick/onedark.vim'
+Plugin 'ajmwagar/vim-deus'
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'cocopon/iceberg.vim'
+Plugin 'ghifarit53/tokyonight-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme gruvbox
+" Plugins configurations
+colorscheme tokyonight
 let g:deus_termcolors=256
 let g:ctrlp_working_path_mode = 'ra'
 let g:indentLine_setColors = 0
