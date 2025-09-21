@@ -1,4 +1,11 @@
-# nvim-config
+# nvim-config [DEPRECATED]
+
+UPDATE: 
+
+There are now native alternatives available that achieve the same or even better configuration using Lua. You can stay up to date through this repository: [https://github.com/VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim). For that reason, I've put together an [updated configuration](https://github.com/jayds19/native-nvim-lsp-setup) you can use as a reference. I hope you find it useful.
+
+---
+
 My personal nvim configuration for Node JS, React JS, TS development and more.
 
 
